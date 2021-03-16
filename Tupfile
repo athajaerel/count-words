@@ -1,0 +1,2 @@
+: foreach src/*.asm |> nasm -felf64 -g -Fdwarf -o %o %f |> %B.o
+: *.o |> ld -m elf_x86_64 -s %f -o %o |> counting-words
